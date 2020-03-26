@@ -1,4 +1,4 @@
-#display{
+#screen{
     height:30%;
     display:flex;
     flex-direction:column;
@@ -12,13 +12,13 @@
   letter-spacing:2px;
 }
 
-#input{
+#display{
   height:75%;
   font-weight:400;
   font-size:28px;
 }
 
-#log, #input {
+#log, #display {
     display:flex;
     width:98%;
     margin:1%;
@@ -27,7 +27,7 @@
     background:#2f3640;
 }
 
-#log p, #input p{
+#log p, #display p{
   width:100%;
   padding: 0 20px;
   text-align: right;

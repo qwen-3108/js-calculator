@@ -7,6 +7,7 @@ const inputControl = (numStr, state) => {
   const zeroRegex = /[+/*-]0$/;
   const opRegex = /[+/*-]/;
   const negativeRegex = /[+/*-][-]$/;
+  const decimalRegex =/(?<=[+/*-]|\b)\d\.\d*$/;
 
   let input;
   let output;
@@ -23,21 +24,11 @@ const inputControl = (numStr, state) => {
     case '*':
     case '/': //Previous input was an operator
       if (opRegex.test(numStr)) {
-        input = (negativeRegex.test(numStr)) ? inp : (numStr === '-') ? inp +numStr : inp ;
-        output = (negativeRegex.test(numStr)) ? out : (numStr === '-') ? out + numStr : out;
+        input = (negativeRegex.test(numStr)) ? inp : (numStr === '-') ? inp+numStr : inp.slice(0, inp.length-1)+numStr ;
+        output = (negativeRegex.test(numStr)) ? out : (numStr === '-') ? out+numStr : numStr;
       } else {
         input = inp+numStr;
         output = numStr;
-      }
-      break;
-
-    case '.': //Previous input was decimal character
-      if(numStr==='.'||(opRegex.test(numStr)&&opRegex.test(inp[inp.length-2]))){
-        input = inp;
-        output = out;
-      }else{
-        input = inp+numStr;
-        output = opRegex.test(numStr)? numStr : out+numStr;
       }
       break;
 
@@ -51,9 +42,15 @@ const inputControl = (numStr, state) => {
       }
       break;
 
-    default: //Previous input was 1-9
-      input = inp+numStr;
-      output = opRegex.test(numStr)? numStr : out+numStr;
+    default: //Previous input was 1-9 or decimal
+      if(decimalRegex.test(inp)&&numStr==='.'){
+        input=inp;
+        output=out;
+        break;
+      }else{
+        input = inp+numStr;
+        output = opRegex.test(numStr)? numStr : out+numStr;
+      }
 
   }
 
@@ -71,3 +68,14 @@ compute('-5-5');
 compute('-5--5');
 compute('5/-5');
 compute('5+5+');*/
+
+
+/*case '.': //Previous input was decimal character
+  if(numStr==='.'||(opRegex.test(numStr)&&opRegex.test(inp[inp.length-2]))){
+    input = inp;
+    output = out;
+  }else{
+    input = inp+numStr;
+    output = opRegex.test(numStr)? numStr : out+numStr;
+  }
+  break;*/

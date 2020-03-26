@@ -8,9 +8,9 @@ class Display extends Component {
   render() {
     const {input, output} = this.props.memory;
     return (
-      <div id="display">
+      <div id="screen">
         <div id="log"><p>{input}</p></div>
-        <div id="input"><p>{output}</p></div>
+        <div id="display"><p>{output}</p></div>
       </div>
     );
   }

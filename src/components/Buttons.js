@@ -18,7 +18,7 @@ class Buttons extends Component {
       {id:"one",click:this.props.logInput,value:'1', className:"num"},
       {id:"two",click:this.props.logInput,value:'2', className:"num"},
       {id:"three",click:this.props.logInput,value:'3', className:"num"},
-      {id:"multiple",click:this.props.logInput,value:'*', className:"oprt"},
+      {id:"multiply",click:this.props.logInput,value:'*', className:"oprt"},
       {id:"clear",click:this.props.clearInput,value:'CLR', className:"clear"},
       {id:"zero",click:this.props.logInput,value:'0', className:"num"},
       {id:"decimal",click:this.props.logInput,value:'.', className:"num"},
@@ -34,7 +34,7 @@ class Buttons extends Component {
           {numPad}
         </div>
         <div className="enter">
-        <button id="equal" onClick={this.props.calcInput}>=</button>
+        <button id="equals" onClick={this.props.calcInput}>=</button>
         </div>
       </div>
     );
