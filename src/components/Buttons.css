@@ -1,0 +1,64 @@
+button {
+  border:none;
+  background:none;
+  border-radius:5px;
+  font-family:'Roboto', sans-serif;
+  font-weight:300;
+  font-size:28px;
+  cursor:pointer;
+  position:relative;
+  color:#ecf0f1;
+}
+
+button:hover{
+  top:2px;
+  left:2px;
+}
+
+#button-pad {
+  height:70%;
+  display:flex;
+  flex-direction:column;
+  border-radius:20px;
+}
+
+.num-pad {
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction:row;
+  justify-content: center;
+  height:80%;
+}
+
+.num-pad button{
+  width:23%;
+  margin:1%;
+}
+
+.num{
+  background:#bdc3c7;
+  color:#353b48;
+}
+
+.oprt{
+  background:#1abc9c;
+}
+
+.clear{
+  font-size:18px;
+  background:#e74c3c;
+}
+
+.enter {
+  display:flex;
+  justify-content: center;
+  height:20%;
+}
+
+.enter button{
+  width:98%;
+  margin:1%;
+  background:#1abc9c;
+  font-weight:400;
+  font-size:32px;
+}

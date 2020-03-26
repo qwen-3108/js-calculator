@@ -1,0 +1,34 @@
+#display{
+    height:30%;
+    display:flex;
+    flex-direction:column;
+    font-family:'Roboto', sans-serif;
+    font-weight:300;
+}
+
+#log{
+  height:25%;
+  font-size:21px;
+  letter-spacing:2px;
+}
+
+#input{
+  height:75%;
+  font-weight:400;
+  font-size:28px;
+}
+
+#log, #input {
+    display:flex;
+    width:98%;
+    margin:1%;
+    align-items: center;
+    border-radius: 5px;
+    background:#2f3640;
+}
+
+#log p, #input p{
+  width:100%;
+  padding: 0 20px;
+  text-align: right;
+}
