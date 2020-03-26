@@ -33,9 +33,9 @@ const reducer = (state = data, action) => {
         return {input: '0', output:'0'};
 
       case 'CALC':
-        let {refine, result} = compute(state.input);
-        let inpStr = refine ? refine : state.input+'=';
-        let outStr = refine ? refine : result;
+        let {escape, result} = compute(state.input);
+        let inpStr = escape ? escape : state.input+'=';
+        let outStr = escape ? escape : result;
         //console.log(compute(state), result);
         return {input:inpStr.toString(), output:outStr.toString()};
 

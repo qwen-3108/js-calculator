@@ -6,7 +6,6 @@ const inputControl = (numStr, state) => {
   } = state;
   const zeroRegex = /[+/*-]0$/;
   const opRegex = /[+/*-]/;
-  const negativeRegex = /[+/*-][-]$/;
   const decimalRegex =/(?<=[+/*-]|\b)\d\.\d*$/;
 
   let input;
@@ -23,13 +22,8 @@ const inputControl = (numStr, state) => {
     case '-':
     case '*':
     case '/': //Previous input was an operator
-      if (opRegex.test(numStr)) {
-        input = (negativeRegex.test(numStr)) ? inp : (numStr === '-') ? inp+numStr : inp.slice(0, inp.length-1)+numStr ;
-        output = (negativeRegex.test(numStr)) ? out : (numStr === '-') ? out+numStr : numStr;
-      } else {
-        input = inp+numStr;
-        output = numStr;
-      }
+      input = inp+numStr;
+      output = numStr;
       break;
 
     case '0': //Previous input was 0
