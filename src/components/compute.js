@@ -7,26 +7,14 @@ const compute = (str) => {
   let opArr = str.match(opRegex);
 
   if (opArr === null) {
-    //deleting extra decimals
-    if(str.includes('.')){
-    while (str.match(/\./g).length > 1) {
-      let index =str.lastIndexOf('.');
-      let tempStr = str.slice(0, index) + str.slice(index + 1);
-      str = tempStr;
-    }}
+
     return {refine:str,result:null};
+
   } else {
 
     //cleaning repeating operators & assigning negative sign
     let cleanedArr = [];
     for (let i = 0; i < opArr.length; i++) {
-
-      if(numArr[i].includes('.')){
-        while (numArr[i].match(/\./g).length > 1) {
-          let index = numArr[i].lastIndexOf('.');
-          let tempStr = numArr[i].slice(0, index) + numArr[i].slice(index + 1);
-          numArr[i] = tempStr;
-        }}
 
         cleanedArr.push(numArr[i]);
         cleanedArr.push(opArr[i]);
