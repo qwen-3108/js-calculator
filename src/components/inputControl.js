@@ -7,7 +7,7 @@ const inputControl = (numStr, state) => {
   const zeroRegex = /[+/*-]0$/;
   const opRegex = /[+/*-]/;
   const negativeRegex = /[+/*-][-]$/;
-  const decimalRegex =/(?<=[+/*-]|\b)\d\.\d*$/;
+  const decimalRegex =/((?<=[+/*-]|\b)\d\.\d*)|\.$/;
 
   let input;
   let output;
