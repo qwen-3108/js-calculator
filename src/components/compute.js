@@ -38,9 +38,9 @@ const compute = (str) => {
       tempNum = tempNum.slice(1);
     }
     cleanedArr.push(tempNum);
-    // console.log('numArr:', numArr);
-    // console.log('opArr:', opArr);
-    // console.log('cleanedArr:', cleanedArr);
+    console.log('numArr:', numArr);
+    console.log('opArr:', opArr);
+    console.log('cleanedArr:', cleanedArr);
 
     //multiplication, division
     const OP = [{
